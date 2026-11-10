@@ -13,7 +13,7 @@ Neste projeto treinei raspagem de dados, arquitetura modular, leitura de arquivo
 
 Para coletar o catálogo de novo:
 
-- **pip install scrapy**
+- **pip install -r requirements.txt**
 - **scrapy crawl livros -O catalogoCompleto.csv**
 
 O spider fica em `rastreadorPrecos/spiders/livros.py`.
@@ -34,7 +34,7 @@ Você precisa do Python 3 instalado. Além disso, é necessário instalar duas b
 
 Instale as dependências com:
 
-- **pip install openpyxl python-docx**
+- **pip install -r requirements.txt** (já instala tudo)
 
 
 Depois, execute o arquivo principal:
