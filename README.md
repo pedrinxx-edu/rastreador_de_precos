@@ -1,6 +1,22 @@
-# Sistema de Consulta de Catálogo de Livros
+# Rastreador de Preços: Catálogo de Livros
 
-Programa de terminal feito em Python para pesquisar, filtrar e exportar dados de livros. Neste projeto treinei arquitetura modular, leitura de arquivos CSV, formatação de strings, uso de variáveis de estado (flags) e exportação de relatórios para Excel e Word.
+Projeto em duas partes, feito em Python:
+
+1. **Coleta com Scrapy**: um spider percorre as 50 páginas do site de treino books.toscrape.com e salva o nome e o preço de 1.000 livros no `catalogoCompleto.csv`.
+2. **Programa de terminal**: lê esse CSV para pesquisar, filtrar e exportar os livros para Excel e Word.
+
+Neste projeto treinei raspagem de dados, arquitetura modular, leitura de arquivos CSV, formatação de strings, uso de variáveis de estado (flags) e exportação de relatórios.
+
+![Resultado: catálogo coletado e exportado](portfolio-book-scraper.png)
+
+## Coleta dos dados (Scrapy)
+
+Para coletar o catálogo de novo:
+
+- **pip install scrapy**
+- **scrapy crawl livros -O catalogoCompleto.csv**
+
+O spider fica em `rastreadorPrecos/spiders/livros.py`.
 
 ## O que ele faz
 
@@ -8,7 +24,7 @@ Programa de terminal feito em Python para pesquisar, filtrar e exportar dados de
 
 - **Procurar títulos**: busca por palavras-chave no nome do livro, ignorando letras maiúsculas, minúsculas e espaços em branco.
 
-- **Exportar catálogo**: permite exportar a lista completa de livros do banco de dados para um arquivo Excel (com cores e tamanhos ajustados) ou para um arquivo Word (com formatação em negrito).
+- **Exportar catálogo**: permite exportar a lista completa de livros do arquivo CSV para um arquivo Excel (com cores e tamanhos ajustados) ou para um arquivo Word (com formatação em negrito).
 
 O menu aceita o número da opção ou o nome dela (por exemplo, `1` ou `preço`). Se a pessoa digitar algo parecido, o programa sugere a opção certa ("Você quis dizer...?").
 
